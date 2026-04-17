@@ -37,3 +37,8 @@ curl -X POST https://day12-complete-production.up.railway.app/ask \
 - AGENT_API_KEY
 - OPENAI_API_KEY
 - LOG_LEVEL
+
+## Screenshots
+- [Deployment dashboard](./extras/screenshots/dashboard.png)
+- [Service running](./extras/screenshots/running.png)
+- [Test results](./extras/screenshots/test.png)

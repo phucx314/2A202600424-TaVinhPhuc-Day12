@@ -37,6 +37,8 @@
 - URL: https://day12-production-ad58.up.railway.app
 - Screenshot: [https://github.com/phucx314/2A202600424-TaVinhPhuc-Day12/blob/main/extras/screenshots/image.png](./extras/screenshots/image.png)
 
+- URL phần 6: https://day12-complete-production.up.railway.app
+
 ### Exercise 3.2: Deploy Render / Config files comparison
 Dựa trên rubric chấm điểm, tôi chọn phương án So sánh config thay vì cài đặt song song nền tảng Render để đỡ tốn thời gian. Bên dưới là sự khác biệt giữa `render.yaml` và `railway.toml`:
 1. **Quản lý quy mô (Scope):**
