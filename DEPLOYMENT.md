@@ -1,7 +1,7 @@
 # Deployment Information
 
 ## Public URL
-https://day12-production-ad58.up.railway.app
+https://day12-complete-production.up.railway.app
 
 ## Platform
 Railway
@@ -10,24 +10,30 @@ Railway
 
 ### Health Check
 ```bash
-curl https://day12-production-ad58.up.railway.app/health
+curl https://day12-complete-production.up.railway.app/health
 # Expected: {"status": "ok", "uptime_seconds": ...}
+```
+
+### API Test (without key — should return 401)
+```bash
+curl -X POST https://day12-complete-production.up.railway.app/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "Hello"}'
+# Expected: {"detail": "Invalid or missing API key..."}
 ```
 
 ### API Test (with authentication)
 ```bash
-curl -X POST https://day12-production-ad58.up.railway.app/ask \
-  -H "X-API-Key: demo-key-change-in-production" \
+curl -X POST https://day12-complete-production.up.railway.app/ask \
+  -H "X-API-Key: dev-key-change-me" \
   -H "Content-Type: application/json" \
-  -d '{"question": "Hello AI Agent"}'
+  -d '{"question": "1 + 1 = ?"}'
+# Expected: {"question": "1 + 1 = ?", "answer": "1 + 1 = 2.", ...}
 ```
 
 ## Environment Variables Set
-- PORT=8000
-- REDIS_URL (Managed by Nixpacks / Railway auto-provisioning)
+- PORT (auto-injected by Railway)
+- REDIS_URL (optional, fallback to in-memory)
 - AGENT_API_KEY
+- OPENAI_API_KEY
 - LOG_LEVEL
-- ENVIRONMENT=production
-
-## Screenshots
-- [Deployment Screenshot](./extras/screenshots/image.png)
